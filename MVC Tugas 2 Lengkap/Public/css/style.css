@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif; /* Change the font-family to 'Open Sans' */
+}
+
+/* ... (the rest of your CSS styles) */
+
+
+h1 {
+    color: rgb(255, 255, 255);
+}
+
+body {
+    min-height: 100vh;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background: rgba(71, 147, 227, 1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+	text-align: center;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: white;
+	padding: 30px 0;
+}
+
+main.table {
+    width: 82vw;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, 0.333);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    overflow: hidden;
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: rgba(0, 0, 0, 0.267);
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__header .input-group {
+    width: 35%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.333);
+    padding: 0 .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+    border: 3px solid #ffffff;
+}
+
+.table__header .input-group:hover {
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
+}
+
+.table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: rgba(255, 255, 255, 0.733);
+    margin: .8rem auto;
+
+    overflow: auto;
+    overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #324960;
+    cursor: pointer;
+    text-transform: capitalize;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p {
+    transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+    padding: 0;
+    font: 0 / 0 sans-serif;
+    transition: .2s ease-in-out .5s;
+}
+
+@media (max-width: 1000px) {
+    td:not(:first-of-type) {
+        min-width: 12.1rem;
+    }
+}
+
+.button-36 {
+    border: 3px solid #ffffff;
+    background: white;
+    padding: 7px;
+    margin: 3px;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+}
+
+.button-36:hover {
+    background: rgb(255, 255, 255);
+    color: rgba(71, 147, 227, 1);
+}
+
+form {
+    max-width: 40em;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.333);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.333);
+
+}
+
+form .label {
+    font-weight: bold;
+    color: white;
+    padding-top: 0;
+    padding-left: 0;
+    letter-spacing: 0.025em;
+    font-size: 1.125em;
+    line-height: 1.25;
+    position: relative;
+    z-index: 100;
+}
+
+form .text-input {
+    font: inherit;
+    line-height: normal;
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    position: relative;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+form .button {
+    font: inherit;
+    line-height: normal;
+    cursor: pointer;
+    background: rgb(71, 98, 232);
+    color: white;
+    font-weight: bold;
+    width: auto;
+    margin-left: auto;
+    font-weight: bold;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+form .field {
+    width: 100%;
+    margin: 0 0 1.5em 0;
+}
+
+@media screen and (min-width: 40em) {
+    .form .field.half {
+        width: calc(50% - 1px);
+    }
+}
